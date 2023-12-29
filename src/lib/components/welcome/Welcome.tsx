@@ -77,7 +77,6 @@ export function Welcome(props: WelcomeProps) {
   const handleSubmit = () => {
     if (activeStep === 2) {
       setActiveStep(1);
-      setState({ username: '', jobtitle: '' });
       onClose();
       onSubmit(state);
       return;
