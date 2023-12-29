@@ -19,6 +19,25 @@ import { userCreationSteps } from '~/lib/core/user';
 
 import { WelcomeStepper } from './WelcomeStepper';
 
+// Form validation could use React Hook Form as recommended by the Chakra UI docs.
+// However, I've followed the instructions and kept dependencies to a minimum.
+// This function implements a basic validation for the form.
+function isDisabled(activeStep: number, state: User) {
+  let result;
+  switch (activeStep) {
+    case 1:
+      result = state.username === '';
+      break;
+    case 2:
+      result = state.jobtitle === '';
+      break;
+    default:
+      result = false;
+      break;
+  }
+  return result;
+}
+
 export type WelcomeProps = {
   isOpen: boolean;
   onClose: () => void;
@@ -70,7 +89,7 @@ export function Welcome(props: WelcomeProps) {
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose} isCentered>
       <ModalContent>
         <form
           onSubmit={(e) => {
@@ -134,7 +153,12 @@ export function Welcome(props: WelcomeProps) {
                 Back
               </Button>
             )}
-            <Button type="submit" colorScheme="blue" mr={3}>
+            <Button
+              type="submit"
+              colorScheme="blue"
+              mr={3}
+              isDisabled={isDisabled(activeStep, state)}
+            >
               {activeStep === 2 ? 'Submit' : 'Next'}
             </Button>
           </ModalFooter>

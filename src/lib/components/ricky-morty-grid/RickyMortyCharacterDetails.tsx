@@ -7,7 +7,7 @@ import {
   Stack,
   Tag,
 } from '@chakra-ui/react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 
 import type { RickyMortyCharacter } from '~/lib/ricky-morty';
 

@@ -1,12 +1,13 @@
-Documentation
-NextJS with Typescript
-Chakra UI
+# Checklist
 
-Welcome modal
-Two separate slides 1. username 2. jobTitle
-Persist
-Change
-
-Query public GraphQL API
-Display data items in "Information Page"
-Click item should open a modal that displays more information
+- [x] NextJS with Typescript
+- [x] Chakra UI
+- [x] Welcome modal
+- [x] Two separate slides
+  - [x] 1. username
+  - [x] 2. jobTitle
+  - [x] Persist
+  - [x] Change
+- [x] Query public GraphQL API
+- [x] Display data items in "Information Page"
+- [x] Click item should open a modal that displays more information

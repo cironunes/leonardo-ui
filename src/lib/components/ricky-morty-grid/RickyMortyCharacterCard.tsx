@@ -1,7 +1,7 @@
 'use client';
 
 import { Card, Text } from '@chakra-ui/react';
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { useState } from 'react';
 
 import type { RickyMortyCharacter } from '~/lib/ricky-morty';

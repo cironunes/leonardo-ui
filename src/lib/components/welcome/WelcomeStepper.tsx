@@ -1,3 +1,4 @@
+import type { StepperProps } from '@chakra-ui/react';
 import {
   Step,
   StepDescription,
@@ -9,6 +10,7 @@ import {
   StepTitle,
   Stepper,
   Box,
+  useBreakpointValue,
 } from '@chakra-ui/react';
 
 export type WelcomeStep = {
@@ -23,8 +25,13 @@ export type WelcomeStepperProps = {
 
 export function WelcomeStepper(props: WelcomeStepperProps) {
   const { activeStep, steps } = props;
+  const orientation = useBreakpointValue<StepperProps['orientation']>({
+    base: 'vertical',
+    md: 'horizontal',
+  });
+
   return (
-    <Stepper index={activeStep}>
+    <Stepper index={activeStep} orientation={orientation}>
       {steps.map((step) => (
         <Step key={step.title}>
           <StepIndicator>
