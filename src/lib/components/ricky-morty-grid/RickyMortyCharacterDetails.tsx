@@ -7,7 +7,7 @@ import {
   Stack,
   Tag,
 } from '@chakra-ui/react';
-import Image from "next/legacy/image";
+import Image from 'next/image';
 
 import type { RickyMortyCharacter } from '~/lib/ricky-morty';
 
@@ -29,10 +29,14 @@ export function RickyMortyCharacterDetails(
         <ModalBody>
           <Image
             src={character.image}
-            layout="responsive"
             alt={character.name}
             width={300}
             height={300}
+            sizes="100vw"
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
           />
           <Stack direction="row" py={3} gap={1}>
             <Tag>{character.species}</Tag>

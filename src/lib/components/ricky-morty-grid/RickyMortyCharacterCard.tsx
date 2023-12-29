@@ -1,7 +1,7 @@
 'use client';
 
 import { Card, Text } from '@chakra-ui/react';
-import Image from "next/legacy/image";
+import Image from 'next/image';
 import { useState } from 'react';
 
 import type { RickyMortyCharacter } from '~/lib/ricky-morty';
@@ -31,9 +31,13 @@ export function RickyMortyCharacterCard(props: RickyMortyCharacterProps) {
         <Image
           src={image}
           alt={name}
-          layout="responsive"
           width={300}
           height={300}
+          sizes="100vw"
+          style={{
+            width: '100%',
+            height: 'auto',
+          }}
         />
         <Text p={1} noOfLines={1}>
           {name}
