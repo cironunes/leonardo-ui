@@ -12,6 +12,7 @@ import {
   Button,
   Input,
 } from '@chakra-ui/react';
+import type { FormEvent } from 'react';
 import { useCallback, useRef, useState } from 'react';
 
 import type { User } from '~/lib/core/user';
@@ -74,7 +75,8 @@ export function Welcome(props: WelcomeProps) {
     focusOnInput(nextStep);
   }, [activeStep, focusOnInput, setActiveStep]);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     if (activeStep === 2) {
       setActiveStep(1);
       onClose();
@@ -90,12 +92,7 @@ export function Welcome(props: WelcomeProps) {
   return (
     <Modal isOpen={isOpen} onClose={onClose} isCentered>
       <ModalContent>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleSubmit();
-          }}
-        >
+        <form onSubmit={handleSubmit}>
           <ModalHeader>
             <WelcomeStepper activeStep={activeStep} steps={userCreationSteps} />
           </ModalHeader>
