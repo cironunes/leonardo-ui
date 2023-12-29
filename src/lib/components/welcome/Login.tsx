@@ -25,7 +25,7 @@ export function Login(props: LoginProps) {
         {username && jobtitle && (
           <UserInfo user={user} onEdit={() => setIsOpen(true)} />
         )}
-        <Heading>Welcome to Leonardo.AI</Heading>
+        <Heading as="h1">Welcome to Leonardo.AI</Heading>
       </Box>
       <Welcome
         isOpen={isOpen}

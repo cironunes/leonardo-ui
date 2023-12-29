@@ -24,6 +24,11 @@ export function RickyMortyCharacterCard(props: RickyMortyCharacterProps) {
         onClose={() => setOpen(null)}
       />
       <Card
+        border="1px solid transparent"
+        _hover={{
+          borderColor: 'yellow.100',
+          cursor: 'pointer',
+        }}
         onClick={() => {
           setOpen(id);
         }}
