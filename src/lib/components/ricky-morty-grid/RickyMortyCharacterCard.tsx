@@ -26,7 +26,7 @@ export function RickyMortyCharacterCard(props: RickyMortyCharacterProps) {
       <Card
         border="1px solid transparent"
         _hover={{
-          borderColor: 'yellow.100',
+          borderColor: 'blue.100',
           cursor: 'pointer',
         }}
         onClick={() => {
