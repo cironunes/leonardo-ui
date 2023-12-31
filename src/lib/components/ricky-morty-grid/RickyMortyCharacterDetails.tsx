@@ -4,6 +4,7 @@ import {
   ModalCloseButton,
   ModalContent,
   ModalHeader,
+  ModalOverlay,
   Stack,
   Tag,
 } from '@chakra-ui/react';
@@ -23,6 +24,11 @@ export function RickyMortyCharacterDetails(
   const { isOpen, onClose, character } = props;
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
+      <ModalOverlay />
+      <ModalHeader>
+        Welcome to Leonardo.AI, to continue please provide some information
+        about you
+      </ModalHeader>
       <ModalContent>
         <ModalHeader>{character.name}</ModalHeader>
         <ModalCloseButton />

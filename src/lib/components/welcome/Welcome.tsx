@@ -11,6 +11,8 @@ import {
   ModalBody,
   Button,
   Input,
+  ModalOverlay,
+  Text,
 } from '@chakra-ui/react';
 import type { FormEvent } from 'react';
 import { useCallback, useRef, useState } from 'react';
@@ -91,9 +93,14 @@ export function Welcome(props: WelcomeProps) {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} isCentered>
+      <ModalOverlay />
       <ModalContent>
         <form onSubmit={handleSubmit}>
           <ModalHeader>
+            <Text textAlign="center" fontSize="sm" fontWeight="normal" mb={3}>
+              <b>Welcome to Leonardo.AI.</b> <br />
+              To continue please provide some information about you
+            </Text>
             <WelcomeStepper activeStep={activeStep} steps={userCreationSteps} />
           </ModalHeader>
           <ModalBody>

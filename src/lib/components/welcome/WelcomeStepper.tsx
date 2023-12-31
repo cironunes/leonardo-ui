@@ -2,7 +2,6 @@ import type { StepperProps } from '@chakra-ui/react';
 import {
   Step,
   StepDescription,
-  StepIcon,
   StepIndicator,
   StepNumber,
   StepSeparator,
@@ -36,7 +35,7 @@ export function WelcomeStepper(props: WelcomeStepperProps) {
         <Step key={step.title}>
           <StepIndicator>
             <StepStatus
-              complete={<StepIcon />}
+              complete={<StepNumber />}
               incomplete={<StepNumber />}
               active={<StepNumber />}
             />
