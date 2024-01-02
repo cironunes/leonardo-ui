@@ -25,10 +25,6 @@ export function RickyMortyCharacterDetails(
   return (
     <Modal isOpen={isOpen} onClose={onClose}>
       <ModalOverlay />
-      <ModalHeader>
-        Welcome to Leonardo.AI, to continue please provide some information
-        about you
-      </ModalHeader>
       <ModalContent>
         <ModalHeader>{character.name}</ModalHeader>
         <ModalCloseButton />
